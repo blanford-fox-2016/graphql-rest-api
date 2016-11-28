@@ -24,7 +24,7 @@ app.post('/api/users', (req, res) => {
 })
 
 app.delete('/api/users', (req, res) => {
-    let query = `mutation{delete(id: "${req.body.id}"){id}}`
+    let query = `mutation{delete(id: "${req.body.id}"){id name age}}`
     graphql(schema, query).then((result) => {
         res.json(result)
     })
