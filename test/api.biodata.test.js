@@ -56,6 +56,8 @@ describe('Get all biodata', () => {
       .get('api/biodata')
       .end((err, res) => {
         expect(res.body).to.be.an('object');
+        res.body.data.users[0].name.should.equal("test edit from testing")
+        res.body.data.users[0].age.should.equal(500)
         res.should.be.json
         res.should.have.status(200)
         done()
